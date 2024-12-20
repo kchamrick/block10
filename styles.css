@@ -3,6 +3,7 @@ body{
     margin:0;
     padding:0;
 }
+
 h1{
     font-size: 25px;
 }
@@ -69,6 +70,22 @@ h1{
     background-color: darkslategray;
     color:white;
     padding:0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button{
+    height: 60px;
+    width: 150px; 
+    background-color: #007BFF; 
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    text-align: center;
+    font-size: 16px;
+    font-style: inherit;
+    cursor: pointer;
+    align-items: center;
   }
   
   .sidebar {
@@ -94,21 +111,9 @@ h1{
   }
 
   /* image styling */
-  .first-image{
-    width:100%;
-    height:50%;
-    object-fit:fill;
-  }
-  /* .second-image{
-    width:100;
-    height:100%;
-    object-fit:fill;
-  } */
+  
    .stripes{
     width:100%;
-   }
-   .stripes-2{
-    width:100%
    }
    .more-stripes{
     width:100%;
@@ -118,24 +123,155 @@ h1{
     height:100%;
     object-fit:fill;
    }
-.stripes-4{
-    width:100%;
-}
-.stripes-2{
-  width:100%;
-}
+
 .circles-1{
   width:100%;
 }
-.circles-2{
-  width:100%;
-}
-.texture-1{
-  width:100%;
-}
+
 .abstract-1{
   width:100%;
 }
 .diagonal{
   width:100%;
+}
+.oddball{
+  width:100%;
+  height:100%;
+}
+/* z index styling */
+.parent{
+  border:20px solid red;
+  position:fixed; /*used to fix the position relative to the viewport */
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  gap:0px;
+  z-index:1;
+  /* bottom:240px;
+  right:150px;
+  display:flex;
+  z-index: index 1; */
+}
+.circle {
+  width: 200px; /* Diameter of the circle */
+  height: 200px; /* Same as width to make it a perfect circle */
+  background-color: lightcoral; /* Circle color */
+  border-radius: 50%; /* Makes it a circle */
+  z-index: 2; /* Ensures it stacks appropriately above or below other elements */
+}
+.box-olive{
+  width:50px;
+  height:100px;
+  background-color:olive;
+  z-index:5;
+}
+.box-green{
+  width:100px;
+  height:50px;
+  background-color:chartreuse;
+  z-index:3;
+}
+.box-blue{
+width:50px;
+height:150px;
+background-color:aqua;
+z-index:4;
+}
+/*Desktop Styles*/
+/*Default style is for Desktop size.*/ 
+
+/*Tablet (iPad) Styles*/
+@media(max-width:1024px){
+  .page-container {
+    margin: 0 auto;
+    width: 800px;
+    display: flexbox;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0px;
+}
+.footer {
+  grid-column: 1 / -1;
+  background-color: darkslategray;
+  color:white;
+  padding:15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parent{
+  border:20px solid red;
+  position:fixed; /*used to fix the position relative to the viewport */
+  top:30%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  gap:0px;
+  z-index:1;
+  /* bottom:240px;
+  right:150px;
+  display:flex;
+  z-index: index 1; */
+}
+}
+
+/*Mobile Styles*/
+
+@media(max-width: 480px) {
+  .header {
+    grid-column: 1 / span 5;
+    background-color: darkslategray;
+    color: white;
+    padding: 40px;
+    margin-left: auto;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height:25px;
+  }
+  h1{
+    font-size: 12px;
+}
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  padding:10px 15px;
+  display:block;
+  font-size: 10px;
+}
+nav ul li{
+  position:relative;
+}
+  .page-container {
+    margin: 0 auto;
+    width: 900px;
+    display: grid;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-columns: repeat(1 4);
+    grid-gap: 0px;
+  }
+  .parent{
+    border:20px solid red;
+    position:fixed; /*used to fix the position relative to the viewport */
+    top:10%;
+    left:22%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    gap:0px;
+    z-index:1;
+    /* bottom:240px;
+    right:150px;
+    display:flex;
+    z-index: index 1; */
+  }
+  .footer {
+    grid-column: 1 / -1;
+    background-color: darkslategray;
+    color:white;
+    padding:15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
 }
